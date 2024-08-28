@@ -1,0 +1,35 @@
+DATABASE:
+1. Users Table
+Purpose: Stores information about the users (both students and admins).
+Columns:
+id (Primary Key, Auto Increment)
+name (String)
+email (String, Unique)
+password (String)
+is_admin (Boolean, default to false for students and true for admins)
+created_at (Timestamp)
+updated_at (Timestamp)
+
+
+2. Books Table
+Purpose: Stores information about the books available in the library.
+Columns:
+id (Primary Key, Auto Increment)
+title (String)
+author (String)
+description (Text)
+created_at (Timestamp)
+updated_at (Timestamp)
+
+
+3. Borrows Table
+Purpose: Tracks which books have been borrowed by which users and their return status.
+Columns:
+id (Primary Key, Auto Increment)
+user_id (Foreign Key referencing users.id)
+book_id (Foreign Key referencing books.id)
+borrowed_at (Timestamp)
+return_due_date (Timestamp)
+returned_at (Timestamp, Nullable)
+created_at (Timestamp)
+updated_at (Timestamp)
